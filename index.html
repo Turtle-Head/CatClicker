@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cat Clicker</title>
+  <meta name=viewport content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <script>
+    var cb = function() {
+      var l = document.createElement('link'); l.rel = 'stylesheet';
+      l.href = 'css/style.min.css';
+      var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h);
+    };
+    var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+        webkitRequestAnimationFrame || msRequestAnimationFrame;
+    if (raf) raf(cb);
+    else window.addEventListener('load', cb);
+  </script>
+  <header>
+    <h1>Cat Clicker</h1>
+  </header>
+  <div class="image"><canvas width="400" height="400" id="cvs">Canvas Tag not Supported</canvas></div>
+  <script src="js/script.min.js"></script>
+</body>
+</html>
