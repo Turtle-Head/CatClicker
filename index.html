@@ -17,10 +17,12 @@
     if (raf) raf(cb);
     else window.addEventListener('load', cb);
   </script>
+  <script src="js/jquery-2.1.4.min.js"></script>
   <header>
     <h1>Cat Clicker</h1>
   </header>
-  <div class="image"><canvas width="400" height="400" id="cvs">Canvas Tag not Supported</canvas></div>
+  <h2>Points<div id="point">0</div></h2>
+  <div class="image" id="ctx"><img id="pic" src="img/cat.png" width="100px" height="100px" alt="kitten"><!--<canvas width="400" height="400" id="ctx">Canvas Tag not Supported</canvas>--></div>
   <script src="js/script.min.js"></script>
 </body>
 </html>

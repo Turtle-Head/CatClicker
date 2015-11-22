@@ -16,12 +16,13 @@ img{
   border-style: none;
 }
 div{
-
   padding: 10px;
 }
 h1{
   padding:10px;
   width: 100%;
+  font-family: monospace;
+  font-size: 3em;
 }
 .flex{
   flex-flow: row;
@@ -29,4 +30,8 @@ h1{
 }
 .image{
   padding: 10px;
+}
+#point{
+  font-family: monospace;
+  font-size: 2em;
 }
