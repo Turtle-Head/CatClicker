@@ -27,6 +27,14 @@ h1{
 .flex{
   flex-flow: row;
   border-style:none;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.list-flex{
+  width: 10%;
+  size: 2em;
+  font-family: monospace;
 }
 .image{
   padding: 10px;
