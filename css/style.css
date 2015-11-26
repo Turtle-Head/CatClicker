@@ -29,12 +29,18 @@ h1{
   border-style:none;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  /*flex-wrap: wrap;*/
 }
 .list-flex{
-  width: 10%;
+  width: 18%;
   size: 2em;
   font-family: monospace;
+  border-width: thin;
+  border-style: dashed;
+  background-color: grey;
+  color: white;
+  margin-left: 2%;
+  border-radius: 10px;
 }
 .image{
   padding: 10px;
@@ -42,8 +48,4 @@ h1{
 #point{
   font-family: monospace;
   font-size: 2em;
-}
-#point2{
-  font-family: monospace;
-  font-size: 3em;
 }
