@@ -93,7 +93,7 @@ $(function(){
           octopus.addAdminListener();
         },
         adminView: function(){
-          // this needs to be finished!!!
+
         }
     };
 
