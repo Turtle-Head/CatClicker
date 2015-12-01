@@ -68,14 +68,41 @@ $(function(){
         addAdminListener: function(){
           $('#adminB').show();
           $("#adminB").click(function(){
-            view.adminView();
+            view.adminView(model.cats[model.current]);
           });
-
+          $("#submit-btn").click(function(){
+            octopus.adminSubmit();
+          });
+          $("#cancel-btn").click(function(){
+            view.hideAdmin();
+          });
         },
         adminSubmit: function(){
-          model.cats[model.current].points = $('#noc').val();
-          model.cats[model.current].name = $('#noCat').val();
-          model.cats[model.current].img = $('#imageSource').val();
+          console.log('Submit started');
+          if($('#noc').val() !== ""){
+              var noc = $('#noc').val();
+              model.cats[model.current].points = noc;
+              console.log(noc);
+            }
+          if($('#noCat').val() !== ""){
+            var noCat = $('#noCat').val();
+            for(var c=0; c < model.cats.length; c++){
+              $('#'+model.cats[c].name).remove();
+            }
+            model.cats[model.current].name = noCat;
+            console.log(noCat);
+            $('#noCat').text = "";
+          }
+          if($('#imageSource').val() !== ""){
+            var img = $('#imageSource').val();
+            model.cats[model.current].img = img;
+            console.log(img);
+          }
+          view.init(model);
+          console.log('init');
+          view.renderCatCurrent(model);
+          console.log('render');
+          octopus.menuListener();
         }
     };
 
@@ -101,8 +128,15 @@ $(function(){
           $("#adminB").replaceWith('<div id="adminB">Admin</div>');
           octopus.addAdminListener();
         },
-        adminView: function(){
+        adminView: function(obj){
           $('#adminForm').show();
+          console.log(obj);
+          $('#noc').val(obj.points);
+          $('#noCat').val(obj.name);
+          $('#imageSource').val(obj.img);
+        },
+        hideAdmin: function(){
+          $('#adminForm').hide();
         }
     };
 
