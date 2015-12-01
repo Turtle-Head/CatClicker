@@ -66,9 +66,16 @@ $(function(){
           });
         },
         addAdminListener: function(){
+          $('#adminB').show();
           $("#adminB").click(function(){
-            view.adminview();
+            view.adminView();
           });
+
+        },
+        adminSubmit: function(){
+          model.cats[model.current].points = $('#noc').val();
+          model.cats[model.current].name = $('#noCat').val();
+          model.cats[model.current].img = $('#imageSource').val();
         }
     };
 
@@ -80,20 +87,22 @@ $(function(){
             formattedList += obj.HTMLlist.replace("%name%",obj.cats[i].name).replace("%index%",obj.cats[i].name);
           }
           $('#catNames').append(formattedList);
+          $('#adminB').hide();
+          $('#adminForm').hide();
         },
         renderCatCurrent: function(obj){
           var formattedPic = obj.HTMLcat.replace("%nnn%",obj.cats[obj.current].name).replace("%p%",obj.cats[obj.current].points).replace("%img%",obj.cats[obj.current].img).replace("%name%",obj.cats[obj.current].name);
             // Replace image, points and name
           $("#ctx").replaceWith('<div class="image" id="ctx">' + formattedPic + '</div>');
           octopus.listenerMain();
-          adminButton();
+          view.adminButton();
         },
         adminButton: function(){
           $("#adminB").replaceWith('<div id="adminB">Admin</div>');
           octopus.addAdminListener();
         },
         adminView: function(){
-          // this needs to be finished!!!
+          $('#adminForm').show();
         }
     };
 
