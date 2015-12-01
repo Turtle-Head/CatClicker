@@ -80,7 +80,7 @@ $(function(){
         adminSubmit: function(){
           console.log('Submit started');
           if($('#noc').val() !== ""){
-              var noc = $('#noc').val();
+              var noc = Number($('#noc').val());
               model.cats[model.current].points = noc;
               console.log(noc);
             }
