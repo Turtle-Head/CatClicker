@@ -8,7 +8,7 @@ Object of Game is to Click on the Cat and Earn Points<br>
 <br>
 #-------------<br>
 # Design Goals<br>
-#-------------
+#-------------<br>
 #-Have the Cat move around on the Canvas randomly<br>
 #-If the player clicks on the Cat the points go up<br>
 #-------------<br>
